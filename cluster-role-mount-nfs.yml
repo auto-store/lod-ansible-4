@@ -2,9 +2,9 @@
 - name: Deploy ONTAP Cluster config
   hosts: localhost
   roles:
-    - role: /etc/ansible/lod-ansible/cluster
+    - role: /etc/ansible/lod-ansible-4/cluster
 
 - name: Mount export to rhel
   hosts: rhel
   roles:  
-    - role: /etc/ansible/lod-ansible/mount_nfs
+    - role: /etc/ansible/lod-ansible-4/mount_nfs

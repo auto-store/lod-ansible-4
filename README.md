@@ -15,7 +15,7 @@ docker volume create ssh-keys
 docker volume create ansible
 
 # Run docker container
-docker run -it -v ansible:/etc/ansible -v ssh-keys:/root/.ssh schmot1s/netapp-ansible /bin/bash
+docker run -it -v ansible:/etc/ansible -v ssh-keys:/root/.ssh schmots1/netapp-ansible /bin/bash
 
 # clone github repo
 cd /etc/ansible
@@ -32,11 +32,12 @@ cp /etc/ansible/lod-ansible-"user"/hosts /etc/ansible/
 ansible -m ping rhel
 
 # install NFS utils on RHEL Host with ansible playbook  (change into repository directory!)
+# change into repo directory
+cd lod-ansible-"user"
 ansible-playbook install-nfs-utils.yml
 
 # run playbook for single volume
-change into repo directory ---> cd lod-ansible-"user"
-ansible-playbook flexvol-create.yml
+ansible-playbook flexvol_create.yml
 
 # run role to configure ONTAP cluster (insepct it in VSCODE to see what it does!)
 ansible-playbook cluster-role.yml 
